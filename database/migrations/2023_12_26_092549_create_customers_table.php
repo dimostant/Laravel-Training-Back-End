@@ -13,15 +13,17 @@ return new class extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->id(); //phone ?? is it possible? else clear id key
-            $table->timestamps();
+            $table->string('email')->unique();
+            $table->string('password');
             $table->string('firstname');
             $table->string('lastname');
-            $table->integer('phone_number') ->unique(); //specific format?
-            $table->text('company');//optional
-
-            //HAVENT MIGRATED
+            $table->string('phone_number')->unique(); 
+            $table->string('company')->nullable();
+            $table->timestamps();
         });
     }
+
+    
 
     /**
      * Reverse the migrations.

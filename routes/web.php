@@ -18,4 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/customers', [CustomerController::class, 'index']);    
+Route::get('/form', [CustomerController::class, 'index']);
+Route::patch('/form', [CustomerController::class, 'store']);
+Route::get('/form/edit',[CustomerController::class, 'index']);

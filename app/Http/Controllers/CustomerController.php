@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\customers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
+use function Laravel\Prompts\table;
 
 class CustomerController extends Controller
 {
@@ -13,7 +16,16 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        return view("Customers.create");
+        $data = DB::table('customers')->get();
+        $url = $_SERVER['REQUEST_URI'];
+
+        if ($url == '/form/edit') { 
+            return view("Customers.customers", compact('data'));//['data' => $data]);
+        }
+        if ($url == '/form') {
+            return view("Customers.create");
+        }
+
     }
 
     /**
@@ -21,7 +33,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
-       //
+        //
     }
 
     /**
@@ -29,7 +41,15 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        DB::table('customers')->insert([
+            'email' => $request->get('floating_email'),
+            'password' => $request->get('floating_password'),
+            'firstname' => $request->get('floating_first_name'),
+            'lastname' => $request->get('floating_last_name'),
+            'phone_number' => $request->get('floating_phone'),
+            'company' => $request->get('floating_company') 
+        ]);
+        return view("Customers.create");
     }
 
     /**
@@ -53,7 +73,16 @@ class CustomerController extends Controller
      */
     public function update(Request $request, customers $customers)
     {
-        //
+        $customers
+            ->where('id',1)
+                ->update([
+                    'email' => $request->get('floating_email'),
+                    'password' => $request->get('floating_password'),
+                    'firstname' => $request->get('floating_first_name'),
+                    'lastname' => $request->get('floating_last_name'),
+                    'phone_number' => $request->get('floating_phone'),
+                    'company' => $request->get('floating_company')             
+                ]);
     }
 
     /**
@@ -61,6 +90,8 @@ class CustomerController extends Controller
      */
     public function destroy(customers $customers)
     {
-        //
+        $customers->delete();
+
+        return redirect()->route('Customers.customers')->with('success','Customer deleted successfully');
     }
 }
