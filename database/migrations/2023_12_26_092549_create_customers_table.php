@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('customers', function (Blueprint $table) {
             $table->id(); //phone ?? is it possible? else clear id key
             $table->string('email')->unique();
-            $table->string('password');
             $table->string('firstname');
             $table->string('lastname');
             $table->string('phone_number')->unique(); 

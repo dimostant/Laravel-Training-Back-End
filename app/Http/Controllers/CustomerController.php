@@ -43,7 +43,6 @@ class CustomerController extends Controller
     {
         DB::table('customers')->insert([
             'email' => $request->get('floating_email'),
-            'password' => $request->get('floating_password'),
             'firstname' => $request->get('floating_first_name'),
             'lastname' => $request->get('floating_last_name'),
             'phone_number' => $request->get('floating_phone'),
@@ -77,7 +76,6 @@ class CustomerController extends Controller
             ->where('id',1)
                 ->update([
                     'email' => $request->get('floating_email'),
-                    'password' => $request->get('floating_password'),
                     'firstname' => $request->get('floating_first_name'),
                     'lastname' => $request->get('floating_last_name'),
                     'phone_number' => $request->get('floating_phone'),
