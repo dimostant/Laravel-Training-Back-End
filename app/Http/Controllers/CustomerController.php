@@ -72,15 +72,15 @@ class CustomerController extends Controller
      */
     public function update(Request $request, customers $customers)
     {
-        $customers
-            ->where('id',1)
-                ->update([
-                    'email' => $request->get('floating_email'),
-                    'firstname' => $request->get('floating_first_name'),
-                    'lastname' => $request->get('floating_last_name'),
-                    'phone_number' => $request->get('floating_phone'),
-                    'company' => $request->get('floating_company')             
-                ]);
+        dd($request, $customers);
+            // ->where('id',1)
+            //     ->update([
+            //         'email' => $request->get('floating_email'),
+            //         'firstname' => $request->get('floating_first_name'),
+            //         'lastname' => $request->get('floating_last_name'),
+            //         'phone_number' => $request->get('floating_phone'),
+            //         'company' => $request->get('floating_company')             
+            //     ]);
     }
 
     /**
