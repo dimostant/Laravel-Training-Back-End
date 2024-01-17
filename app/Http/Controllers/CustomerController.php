@@ -19,7 +19,7 @@ class CustomerController extends Controller
         $customers = DB::table('customers')->get();
         $url = $_SERVER['REQUEST_URI'];
 
-        if ($url == '/form/editall') { 
+        if ($url == '/form/edit') { 
             return view("Customers.customers", compact('customers'));//['data' => $data]);
         }
         if ($url == '/form') {
@@ -72,8 +72,10 @@ class CustomerController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $id,)
+    public function update(Request $request, $id)
     {
+
+        // dd ($request, $id);
         $customer = Customers::find($id);
         $customer->where('id', $id)->update([
                     'email' => $request->get('floating_email'),

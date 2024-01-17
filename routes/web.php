@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 Route::get('/form', [CustomerController::class, 'index']);
 Route::patch('/form', [CustomerController::class, 'store']);
-Route::get('/form/editall',[CustomerController::class, 'index'])->name('form.editall');
+Route::get('/form/edit',[CustomerController::class, 'index'])->name('form.editall');
 Route::get('/form/edit/{customer}', [CustomerController::class, 'edit'])->name('form.edit');
 Route::put('/form/edit/{customer}', [CustomerController::class, 'update'])->name('form.update');
 Route::delete('/form/edit/{customer}', [CustomerController::class,'destroy'])->name('form.edit.destroy');
