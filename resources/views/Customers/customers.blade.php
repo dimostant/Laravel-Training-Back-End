@@ -1,6 +1,8 @@
 @extends('Customers.layout')
 @section('content')
 
+
+
 <div class="relative overflow-x-auto">
     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -43,21 +45,18 @@
                 <td>
                     {{ $customer->company}}
                 </td>
-                @if ( $editMode != true )
-                 {{-- && $editButtonRow == $key ) --}}
-                    <td><button type="submit" class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800" onclick="{{ $editButtonRow = -1 }}{{ $editMode = false }}" >Edit</button></td>
-                @else
-                <form action="{{ route('form.edit.put', $customer->id)}}" method="POST">
-                    @csrf
-                    @method('PUT')
-                    <td><button type="submit" class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800" onclick="{{ $editButtonRow = 1}}{{ $editMode = true }}" >Submit</button></td>
-                    {{-- change editButtonrow to row's index --}}
-                </form>
-                @endif
+                
+                {{-- <form action="{{ route('form.edit', $customer->id)}}" method="POST">
+                    <td>
+                    <button type="submit" class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800" href={{route('Customers.edit', $customer->id)}}>Edit</button>
+                    </td>
+                </form> --}}
                 <form action="{{ route('form.edit.destroy', $customer->id)}}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <td><button type="submit" class="text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Delete</button></td>
+                    <td>
+                    <button type="submit" class="text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Delete</button>
+                </td>
                 </form>
             </tr>
             @endforeach

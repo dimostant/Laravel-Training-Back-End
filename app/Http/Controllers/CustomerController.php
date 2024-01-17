@@ -19,7 +19,7 @@ class CustomerController extends Controller
         $customers = DB::table('customers')->get();
         $url = $_SERVER['REQUEST_URI'];
 
-        if ($url == '/form/edit') { 
+        if ($url == '/form/editall') { 
             return view("Customers.customers", compact('customers'));//['data' => $data]);
         }
         if ($url == '/form') {
@@ -64,7 +64,7 @@ class CustomerController extends Controller
      */
     public function edit(customers $customers)
     {
-        //
+        return view("edit.blade", compact("$customers"));
     }
 
     /**
@@ -92,6 +92,6 @@ class CustomerController extends Controller
 
         $customer->delete();
 
-        return redirect()->route('form.edit')->with('success','Customer deleted successfully');
+        return redirect()->route('form.editall')->with('success','Customer deleted successfully');
     }
 }
