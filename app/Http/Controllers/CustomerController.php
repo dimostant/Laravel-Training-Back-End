@@ -75,15 +75,15 @@ class CustomerController extends Controller
     public function update(Request $request, $id,)
     {
         $customer = Customers::find($id);
-        $customer
-            ->where('id', $id)
-                ->update([
+        $customer->where('id', $id)->update([
                     'email' => $request->get('floating_email'),
                     'firstname' => $request->get('floating_first_name'),
                     'lastname' => $request->get('floating_last_name'),
                     'phone_number' => $request->get('floating_phone'),
                     'company' => $request->get('floating_company')             
                 ]);
+
+     return redirect()->route('form.editall')->with('success','Customer updated successfully');
     }
 
     /**
