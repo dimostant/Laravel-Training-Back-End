@@ -62,9 +62,11 @@ class CustomerController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(customers $customers)
+    public function edit($id)
     {
-        return view("edit.blade", compact("$customers"));
+        $customer = Customers::find($id);
+
+        return view("Customers.edit", compact("customer"));
     }
 
     /**

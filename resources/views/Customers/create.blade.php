@@ -3,7 +3,7 @@
 
 <form method="post" action="/form" class="max-w-md mx-auto">
     @csrf
-    @method('patch')
+    @method('PATCH')
     {{-- need to provide js for check, passord fieds to be the same and to check if email is appropriate (.com etc) --}}
   <div class="relative z-0 w-full mb-5 group">
       <input type="email" name="floating_email" id="floating_email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
