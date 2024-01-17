@@ -16,11 +16,11 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        $data = DB::table('customers')->get();
+        $customers = DB::table('customers')->get();
         $url = $_SERVER['REQUEST_URI'];
 
         if ($url == '/form/edit') { 
-            return view("Customers.customers", compact('data'));//['data' => $data]);
+            return view("Customers.customers", compact('customers'));//['data' => $data]);
         }
         if ($url == '/form') {
             return view("Customers.create");
@@ -86,10 +86,12 @@ class CustomerController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(customers $customers)
+    public function destroy($id)
     {
-        $customers->delete();
+        $customer = Customers::find($id);
 
-        return redirect()->route('Customers.customers')->with('success','Customer deleted successfully');
+        $customer->delete();
+
+        return redirect()->route('form.edit')->with('success','Customer deleted successfully');
     }
 }

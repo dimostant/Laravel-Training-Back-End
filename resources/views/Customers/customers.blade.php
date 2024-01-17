@@ -26,34 +26,37 @@
         </thead>
         <tbody>
             @php $editButtonRow = -1; $editMode = false; @endphp 
-            @foreach ( $data as $key => $row) 
+            @foreach ( $customers as $customer) 
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    {{ $row->email }}
+                    {{ $customer->email }}
                 </th>
                 <td class="px-6 py-4">
-                    {{ $row->firstname }}
+                    {{ $customer->firstname }}
                 </td>
                 <td class="px-6 py-4">
-                    {{ $row->lastname }}
+                    {{ $customer->lastname }}
                 </td>
                 <td class="px-6 py-4">
-                    {{ $row->phone_number }}
+                    {{ $customer->phone_number }}
                 </td>
                 <td>
-                    {{ $row-> company}}
+                    {{ $customer->company}}
                 </td>
-                @if ( $editMode == true && $editButtonRow == $key )
-                    <td><button type="submit" class="btn-primary" onclick="{{ $editButtonRow = -1 }}{{ $editMode = false }}" >Submit</button></td>
+                @if ( $editMode == true )
+                 {{-- && $editButtonRow == $key ) --}}
+                    <td><button type="submit" class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800" onclick="{{ $editButtonRow = -1 }}{{ $editMode = false }}" >Submit</button></td>
                 @else
                 {{-- <form action="/form/edit" method="POST"> --}}
-                    <td><button type="submit" class="btn-primary" onclick="{{ $editButtonRow = $key}}{{ $editMode = true }}{{ $key }}" >Edit</button></td>
+                    <td><button type="submit" class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800" onclick="{{ $editButtonRow = 1}}{{ $editMode = true }}" >Edit</button></td>
+                    {{-- change editButtonrow to row's index --}}
                 {{-- </form> --}}
                 @endif
-                <form action="/form/edit" method="POST">
-                    <td><button type="submit" class="btn-danger">Delete</button></td>
+                {{-- <form action="/form/edit/" method="POST"> --}}
+                <form action="{{ route('form.edit.destroy', $customer->id)}}" method="post">
                     @csrf
                     @method('DELETE')
+                    <td><button type="submit" class="text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Delete</button></td>
                 </form>
             </tr>
             @endforeach
