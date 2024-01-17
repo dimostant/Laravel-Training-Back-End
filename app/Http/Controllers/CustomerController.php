@@ -72,17 +72,18 @@ class CustomerController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, customers $customers)
+    public function update(Request $request, $id,)
     {
-        dd($request, $customers);
-            // ->where('id',1)
-            //     ->update([
-            //         'email' => $request->get('floating_email'),
-            //         'firstname' => $request->get('floating_first_name'),
-            //         'lastname' => $request->get('floating_last_name'),
-            //         'phone_number' => $request->get('floating_phone'),
-            //         'company' => $request->get('floating_company')             
-            //     ]);
+        $customer = Customers::find($id);
+        $customer
+            ->where('id', $id)
+                ->update([
+                    'email' => $request->get('floating_email'),
+                    'firstname' => $request->get('floating_first_name'),
+                    'lastname' => $request->get('floating_last_name'),
+                    'phone_number' => $request->get('floating_phone'),
+                    'company' => $request->get('floating_company')             
+                ]);
     }
 
     /**
