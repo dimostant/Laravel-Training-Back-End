@@ -45,12 +45,12 @@
                 <td>
                     {{ $customer->company}}
                 </td>
-                
-                {{-- <form action="{{ route('form.edit', $customer->id)}}" method="POST">
                     <td>
-                    <button type="submit" class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800" href={{route('Customers.edit', $customer->id)}}>Edit</button>
+                    <button type="submit" class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800" 
+                    {{-- href={{route('Customers.edit', $customer->id)}} --}}
+                    action = "/form/edit/{{$customer->id}}"
+                    >Edit</button>
                     </td>
-                </form> --}}
                 <form action="{{ route('form.edit.destroy', $customer->id)}}" method="POST">
                     @csrf
                     @method('DELETE')
