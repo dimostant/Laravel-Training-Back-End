@@ -51,7 +51,7 @@
 </nav>
 
 {{-- <img class="w-full rounded-lg" src="https://cdn.britannica.com/32/101832-004-B15BE48C/Passenger-ship-shipyard-Papenburg-Ger.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="office content 1"> --}}
-
+<script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
 <div class="h-56">
   <div id="default-carousel" class="relative w-full" data-carousel="slide">
   <!-- Carousel wrapper -->
