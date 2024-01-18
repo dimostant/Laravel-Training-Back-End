@@ -20,7 +20,10 @@ class CustomerController extends Controller
         $url = $_SERVER['REQUEST_URI'];
 
         if ($url == '/form/edit') { 
-            return view("Customers.customers", compact('customers'));//['data' => $data]);
+            return view("Customers.customers", compact('customers'));
+        }
+        if ($url == '/form/soz') {
+            return view("Customers.create")->with('message', 'We are sorry!');//not working
         }
         if ($url == '/form') {
             return view("Customers.create");
