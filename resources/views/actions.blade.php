@@ -5,8 +5,8 @@
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
       <a href="/" class="flex  codeitems-center">
           <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 mr-3" alt="Flowbite Logo" />
-          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
-      </a>
+          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Portfolio</span>
+        </a>
       <button data-collapse-toggle="navbar-dropdown" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-dropdown" aria-expanded="false">
           <span class="sr-only">Open main menu</span>
           <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
@@ -50,17 +50,19 @@
     </div>
 </nav>
 
-<div className="h-56">
+{{-- <img class="w-full rounded-lg" src="https://cdn.britannica.com/32/101832-004-B15BE48C/Passenger-ship-shipyard-Papenburg-Ger.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="office content 1"> --}}
+
+<div class="h-56">
   <div id="default-carousel" class="relative w-full" data-carousel="slide">
   <!-- Carousel wrapper -->
   <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
       <!-- Item 1 -->
     <div class="hidden duration-700 ease-in-out" data-carousel-item>
-        <img src="{{url('images/download.jpeg')}}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        <img src="https://cdn.britannica.com/32/101832-004-B15BE48C/Passenger-ship-shipyard-Papenburg-Ger.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="construction">
     </div>
     <!-- Item 2 -->
     <div class="hidden duration-700 ease-in-out" data-carousel-item>
-        <img src="storage\app\public\images\hi-vis-supply-construction-site.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+      <img src="{{ asset('storage/app/public/images/hi-vis-supply-construction-site.jpg') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
     </div>
     <!-- Item 3 -->
     <div class="hidden duration-700 ease-in-out" data-carousel-item>
