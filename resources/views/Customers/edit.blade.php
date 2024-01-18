@@ -10,7 +10,7 @@
                     Email
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    First Name
+                    Full Name
                 </th>
                 <th scope="col" class="px-6 py-3">
                     Secnond Name

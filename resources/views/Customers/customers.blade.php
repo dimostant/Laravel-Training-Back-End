@@ -9,10 +9,7 @@
                     Email
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    First Name
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Secnond Name
+                    Full Name
                 </th>
                 <th scope="col" class="px-6 py-3">
                     Phone Number
@@ -31,10 +28,7 @@
                     {{ $customer->email }}
                 </th>
                 <td class="px-6 py-4">
-                    {{ $customer->firstname }}
-                </td>
-                <td class="px-6 py-4">
-                    {{ $customer->lastname }}
+                    {{ $customer->fullname }}
                 </td>
                 <td class="px-6 py-4">
                     {{ $customer->phone_number }}

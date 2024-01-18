@@ -44,13 +44,21 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        DB::table('customers')->insert([
-            'email' => $request->get('floating_email'),
-            'firstname' => $request->get('floating_first_name'),
-            'lastname' => $request->get('floating_last_name'),
-            'phone_number' => $request->get('floating_phone'),
-            'company' => $request->get('floating_company') 
+        //validate
+
+        DB::insert('insert into customers (email, fullname, phone_number, company) values (?, ?, ?, ?)', [
+            $request->get('floating_email'),
+            $request->get('floating_first_name') . $request->get('floating_last_name'),
+            $request->get('floating_phone'),
+            $request->get('floating_company'),
         ]);
+
+        // DB::table('customers')->insert([
+        //     'email' => $request->get('floating_email'),
+        //     'fullname' => $request->get('floating_last_name') . $request->get('floating_first_name'),
+        //     'phone_number' => $request->get('floating_phone'),
+        //     'company' => $request->get('floating_company') 
+        // ]);
         return view("Customers.create");
     }
 
@@ -77,16 +85,25 @@ class CustomerController extends Controller
      */
     public function update(Request $request, $id)
     {
+        //validate
 
         // dd ($request, $id);
         $customer = Customers::find($id);
-        $customer->where('id', $id)->update([
-                    'email' => $request->get('floating_email'),
-                    'firstname' => $request->get('floating_first_name'),
-                    'lastname' => $request->get('floating_last_name'),
-                    'phone_number' => $request->get('floating_phone'),
-                    'company' => $request->get('floating_company')             
-                ]);
+
+        DB::update('update customers set email = ?, fullname = ?, phone_number = ?, company = ? where id = ?', [
+            $request->get('floating_email'),
+            $request->get('floating_first_name') . $request->get('floating_last_name'),
+            $request->get('floating_phone'),
+            $request->get('floating_company'),
+            $id,
+        ]);
+
+        // $customer->where('id', $id)->update([
+        //             'email' => $request->get('floating_email'),
+        //             'fullname' => $request->get('floating_first_name') . $request->get('floating_last_name'),
+        //             'phone_number' => $request->get('floating_phone'),
+        //             'company' => $request->get('floating_company')             
+        //         ]);
 
      return redirect()->route('form.editall')->with('success','Customer updated successfully');
     }
@@ -96,9 +113,10 @@ class CustomerController extends Controller
      */
     public function destroy($id)
     {
-        $customer = Customers::find($id);
-
-        $customer->delete();
+        DB::delete('delete from customers where id = ?', [$id]);
+        
+        //$customer = Customers::find($id);
+        //$customer->delete();
 
         return redirect()->route('form.editall')->with('success','Customer deleted successfully');
     }
