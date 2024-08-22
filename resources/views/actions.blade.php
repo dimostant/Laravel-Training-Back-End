@@ -30,7 +30,7 @@
                     {{-- return to form with sorry message --}}
                   </li>
                   <li>
-                    <a href="https://www.olympiacossfp.gr/el" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">External Contributors</a>
+                    <a href="https://www.metlengroup.com/el/i-etaireia-mas/" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">External Contributors</a>
                   </li>
                 </ul>
                 <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
