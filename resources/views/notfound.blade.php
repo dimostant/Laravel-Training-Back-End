@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Laravel Portfolio</title>
-    @vite('resources/css/app.css')
-</head>
-<body class="antialiased">
+@extends('layout')
+@section('content')
 
     <!-- Navigation -->
     <nav class="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700">
@@ -72,7 +65,49 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
-</body>
-</html>
+    <!-- Footer -->
+    <footer class="p-4 bg-white sm:p-6 dark:bg-gray-800">
+        <div class="mx-auto max-w-screen-xl">
+            <div class="md:flex md:justify-between">
+                <div class="mb-6 md:mb-0">
+                    <a href="https://flowbite.com" class="flex items-center">
+                        <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-8" alt="FlowBite Logo" />
+                        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+                    </a>
+                </div>
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Contact us</h2>
+                    <ul class="text-gray-600 dark:text-gray-400">
+                        <li class="mb-4" style="display: flex; justify-content: space-between;">
+                            <span>Local</span>
+                            <a class="hover:underline">+30 2421 566969</a>
+                        </li>
+                        <li style="display: flex; justify-content: space-between;">
+                            <span style="margin-right: 10px;">Cellphone</span>
+                            <a class="hover:underline">+30 (695)-5556669</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
+                    <ul class="text-gray-600 dark:text-gray-400">
+                        <li class="mb-4">
+                            <a href="notfound" class="hover:underline">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="notfound" class="hover:underline">Terms &amp; Conditions</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    <!-- </div> -->
+    </footer>
+    <footer class="bg-white dark:bg-gray-800 py-4">
+        <div class="text-center text-gray-500 dark:text-gray-400">
+            &copy; {{ date('Y') }} Portfolio. All rights reserved.
+        </div>
+    </footer>
+
+    
+@endsection
