@@ -31,7 +31,7 @@
                         <div id="dropdownNavbar" class="absolute z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
                             <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownNavbarLink">
                                 <li>
-                                    <a href="notfound" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Staff Info</a> 
+                                  <a href="notfound" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Staff Info</a> 
                                 </li>
                                 <li>
                                     <a href="https://www.metlengroup.com/el/i-etaireia-mas/" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">External Contributors</a>
@@ -39,9 +39,9 @@
                             </ul>
                         </div>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="/actions" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Actions</a>
-                    </li>
+                    </li> -->
                     <li>
                         <a href="/pricing" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
                     </li>
@@ -51,7 +51,7 @@
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav> 
     
     <!-- Not found text -->
     <footer>
@@ -101,7 +101,6 @@
                 </div>
             </div>
         </div>
-    <!-- </div> -->
     </footer>
     <footer class="bg-white dark:bg-gray-800 py-4">
         <div class="text-center text-gray-500 dark:text-gray-400">
