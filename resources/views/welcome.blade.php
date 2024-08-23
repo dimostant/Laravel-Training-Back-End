@@ -38,8 +38,7 @@
                         <div id="dropdownNavbar" class="absolute z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
                             <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownNavbarLink">
                                 <li>
-                                    <a href="form/NotFound" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Staff Info</a> 
-                                    {{-- Redirects to a form with a sorry message --}}
+                                  <a href="notfound" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Staff Info</a> 
                                 </li>
                                 <li>
                                     <a href="https://www.metlengroup.com/el/i-etaireia-mas/" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">External Contributors</a>
@@ -142,10 +141,10 @@
                     <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
                     <ul class="text-gray-600 dark:text-gray-400">
                         <li class="mb-4">
-                            <a href="#" class="hover:underline">Privacy Policy</a>
+                            <a href="notfound" class="hover:underline">Privacy Policy</a>
                         </li>
                         <li>
-                            <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                            <a href="notfound" class="hover:underline">Terms &amp; Conditions</a>
                         </li>
                     </ul>
                 </div>
@@ -175,6 +174,11 @@
         </div>
     </div>
 </footer>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
+</body>
+</html>
 
     <!-- Scripts -->
     <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>

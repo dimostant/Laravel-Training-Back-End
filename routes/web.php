@@ -27,6 +27,10 @@ Route::get('/actions',function () {
     return view('actions');
 });
 
+Route::get('/notfound',function () {
+    return view('notfound');
+});
+
 Route::get('/form', [CustomerController::class, 'index']);
 Route::patch('/form', [CustomerController::class, 'store']);
 
