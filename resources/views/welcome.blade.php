@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laravel Portfolio</title>
     @vite('resources/css/app.css')
 </head>
@@ -12,7 +12,6 @@
     <nav class="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <a href="/" class="flex items-center">
-                <!-- <img src="https://flowbite.com/docs/images/logo.svg" -->
                 <img src="{{ asset('img/blue-cruise-ship-logo-vector-21297795.png') }}" class="h-8 mr-3" alt="Flowbite Logo" />
                 <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">CEMENTEMPORIKH A.E</span>
             </a>
@@ -110,24 +109,24 @@
     </section>
 
 <!-- Footer -->
-<footer class="p-4 bg-white sm:p-6 dark:bg-gray-800">
+<<footer class="p-4 bg-white sm:p-6 dark:bg-gray-800">
     <div class="mx-auto max-w-screen-xl">
         <div class="md:flex md:justify-between">
             <div class="mb-6 md:mb-0">
                 <a href="https://flowbite.com" class="flex items-center">
-                    <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-8" alt="FlowBite Logo" />
-                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+                    <img src="{{ asset('img/blue-cruise-ship-logo-vector-21297795.png') }}" class="h-8 mr-3" alt="Flowbite Logo" />
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">CEMENTEMPORIKH A.E</span>
                 </a>
             </div>
             <div>
                 <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Contact us</h2>
                 <ul class="text-gray-600 dark:text-gray-400">
-                    <li class="mb-4" style="display: flex; justify-content: space-between;">
-                        <span>Local</span>
+                    <li class="mb-4" style="display: flex;">
+                        <span class="w-24" style="flex-shrink: 0">Local</span>
                         <a class="hover:underline">+30 2421 566969</a>
                     </li>
-                    <li style="display: flex; justify-content: space-between;">
-                        <span style="margin-right: 10px;">Cellphone</span>
+                    <li class="mb-4" style="display: flex;">
+                        <span class="w-24" style="flex-shrink: 0">Cellphone</span>
                         <a class="hover:underline">+30 (695)-5556669</a>
                     </li>
                 </ul>
